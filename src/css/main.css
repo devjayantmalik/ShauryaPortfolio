@@ -1,3 +1,81 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.iknow_tm_main_section.active {
+  display: block;
+  animation: slide-down 0.7s ease;
+  -webkit-animation: slide-down 0.7s ease;
+  -moz-animation: slide-down 0.7s ease;
+}
+@keyframes slide-down {
+  0% {
+    -webkit-transform: translateY(30px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+@-webkit-keyframes slide-down {
+  0% {
+    -webkit-transform: translateY(30px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+@-moz-keyframes slide-down {
+  0% {
+    -moz-transform: translateY(30px);
+  }
+  100% {
+    -moz-transform: translateY(0);
+  }
+}
+
+.main_menu li.active {
+  width: 254.344px !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.portfolio_filter a {
+  cursor: pointer;
+}
+
+/* CSS stylesheet */
+/* Define a keyframe animation for fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Define a keyframe animation for fade-out */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade_in_show {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
