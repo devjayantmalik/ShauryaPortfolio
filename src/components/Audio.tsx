@@ -3,9 +3,11 @@ import { Fragment, useEffect } from "react";
 
 export const Audio: React.FC = () => {
   useEffect(() => {
-    var audio1 = document.querySelectorAll("#audio1");
-    var audio2 = document.querySelectorAll("#audio2");
-    var hamburgers = document.querySelectorAll(".trigger .hamburger");
+    var audio1 = document.querySelectorAll<HTMLAudioElement>("#audio1");
+    var audio2 = document.querySelectorAll<HTMLAudioElement>("#audio2");
+    var hamburgers = document.querySelectorAll<HTMLDivElement>(
+      ".trigger .hamburger"
+    );
     if (hamburgers.length > 0) {
       hamburgers.forEach((hamburger) => {
         hamburger.addEventListener("click", function () {

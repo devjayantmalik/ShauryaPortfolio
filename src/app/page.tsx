@@ -9,9 +9,12 @@ export default function Home() {
       <div className="background">
         <Image
           className="image"
-          style={{ zIndex: 0, width: "100%", height: "100%" }}
+          style={{
+            zIndex: 0,
+            width: "100%",
+            height: "100%",
+          }}
           src={homeBackground}
-          objectFit="cover"
           alt="background"
         />
         <div className="overlay" style={{ zIndex: 1 }} />
@@ -21,13 +24,13 @@ export default function Home() {
           <div className="image">
             <Image
               src={avatar}
-              className="h-full w-full"
+              className="h-full w-full mx-auto"
               alt="shaurya bhatnagar"
             />
           </div>
         </div>
         <div className="right">
-          <span className="hello">Hello, I'm</span>
+          <span className="hello">Hello, I&apos;m</span>
           <h3 className="name">{homeData.name}</h3>
           <p className="text">{homeData.description}</p>
           <div className="iknow_tm_button">

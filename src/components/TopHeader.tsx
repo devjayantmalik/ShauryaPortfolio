@@ -4,34 +4,38 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { navLinks } from "../data/main";
-import headerLogo from '~/pics/common/header-logo.png'
-import Image from 'next/image'
-
+import headerLogo from "~/pics/common/header-logo.png";
+import Image from "next/image";
 
 export const TopHeader: React.FC = () => {
   const pathname = usePathname();
   const [isOpened, setIsOpened] = useState(false);
 
   useEffect(() => {
-    const ccc = document.querySelector(".iknow_tm_topbar .wrapper .menu .ccc");
-    const elements = document.querySelectorAll(
-      ".iknow_tm_topbar .wrapper .menu a"
+    const ccc = document.querySelector<HTMLSpanElement>(
+      ".iknow_tm_topbar .wrapper .menu .ccc"
     );
-    const element = document.querySelector(
+    const elements =
+      document.querySelectorAll<HTMLAnchorElement>(
+        ".iknow_tm_topbar .wrapper .menu a"
+      ) || [];
+    const element = document.querySelector<HTMLAnchorElement>(
       ".iknow_tm_topbar .wrapper .menu .active a"
     );
-  
+
     elements.forEach(function (el) {
       el.addEventListener("mouseenter", function () {
         const e = el;
         currentLink(ccc, e);
       });
     });
-  
-    const menu = document.querySelector(".iknow_tm_topbar .wrapper .menu");
-    menu.addEventListener("mouseleave", function () {
+
+    const menu: HTMLDivElement | null = document.querySelector(
+      ".iknow_tm_topbar .wrapper .menu"
+    );
+    menu?.addEventListener("mouseleave", function () {
       currentLink(ccc, element);
-  
+
       const siblings = document.querySelectorAll(
         ".iknow_tm_topbar .wrapper .menu li"
       );
@@ -39,30 +43,35 @@ export const TopHeader: React.FC = () => {
         sibling.classList.remove("mleave");
       });
     });
-  
+
     currentLink(ccc, element);
-  
-    function currentLink(ccc, e) {
+
+    function currentLink(
+      ccc: HTMLSpanElement | null,
+      e: HTMLAnchorElement | null
+    ) {
       if (!e) {
         return false;
       }
       const left = e.getBoundingClientRect().left;
       const width = e.offsetWidth;
-      const menuLeft = document?
-        .querySelector(".iknow_tm_topbar .wrapper .menu")
-        .getBoundingClientRect().left;
-  
-      e.parentNode.classList.remove("mleave");
-  
+      const menuLeft = document
+        ?.querySelector<HTMLDivElement>(".iknow_tm_topbar .wrapper .menu")
+        ?.getBoundingClientRect().left;
+
+      (e as any | null)?.parentNode?.classList.remove("mleave");
+
       const siblings = document.querySelectorAll(
         ".iknow_tm_topbar .wrapper .menu li"
       );
       siblings.forEach(function (sibling) {
         sibling.classList.add("mleave");
       });
-  
-      ccc.style.left = left - menuLeft + "px";
-      ccc.style.width = width + "px";
+
+      if (!!ccc && menuLeft) {
+        ccc.style.left = left - menuLeft + "px";
+        ccc.style.width = width + "px";
+      }
     }
   }, []);
 
