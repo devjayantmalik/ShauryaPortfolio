@@ -1,5 +1,5 @@
-import { aboutData, homeData } from "~/data/main";
 import Image from "next/image";
+import { PortfolioDetails } from "~/data/main";
 import photoBg from "~/pics/about/photo-background.jpg";
 import photo from "~/pics/about/photo.jpg";
 
@@ -19,27 +19,27 @@ export default function About() {
             <ul>
               <li>
                 <h3>Name</h3>
-                <span>{aboutData.name}</span>
+                <span>{PortfolioDetails.common.name}</span>
               </li>
               <li>
                 <h3>Birthday</h3>
-                <span>{aboutData.birthday}</span>
+                <span>{PortfolioDetails.common.birthday}</span>
               </li>
               <li>
                 <h3>Mail</h3>
-                <span>{aboutData.email}</span>
+                <span>{PortfolioDetails.common.email}</span>
               </li>
               <li>
                 <h3>Phone</h3>
-                <span>{aboutData.phone}</span>
+                <span>{PortfolioDetails.common.phone}</span>
               </li>
               <li>
                 <h3>Address</h3>
-                <span>{aboutData.address}</span>
+                <span>{PortfolioDetails.common.address}</span>
               </li>
               <li>
                 <h3>Nationality</h3>
-                <span>{aboutData.nationality}</span>
+                <span>{PortfolioDetails.common.nationality}</span>
               </li>
             </ul>
           </div>
@@ -48,16 +48,19 @@ export default function About() {
       <div className="right">
         <div className="iknow_tm_main_title">
           <span>About Me</span>
-          <h3>{aboutData.title}</h3>
+          <h3>{PortfolioDetails.about.title}</h3>
         </div>
         <div className="bigger_text">
-          <p>{aboutData.subTitle}</p>
+          <p>{PortfolioDetails.about.subTitle}</p>
         </div>
         <div className="text">
-          <p>{aboutData.bio}</p>
+          <p>{PortfolioDetails.common.bio}</p>
         </div>
         <div className="iknow_tm_button">
-          <a href={homeData.resumeURL} download={homeData.resumeDownloadName}>
+          <a
+            href={PortfolioDetails.resume.resumeURL}
+            download={PortfolioDetails.resume.resumeDownloadName}
+          >
             Download Resume
           </a>
         </div>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import homeBackground from "~/pics/home/background.jpg";
 import avatar from "~/pics/home/avatar.png";
-import { homeData } from "../data/main";
+import { PortfolioDetails, homeData } from "../data/main";
 
 export default function Home() {
   return (
@@ -25,16 +25,19 @@ export default function Home() {
             <Image
               src={avatar}
               className="h-full w-full mx-auto"
-              alt="shaurya bhatnagar"
+              alt={PortfolioDetails.common.name}
             />
           </div>
         </div>
         <div className="right">
           <span className="hello">Hello, I&apos;m</span>
-          <h3 className="name">{homeData.name}</h3>
-          <p className="text">{homeData.description}</p>
+          <h3 className="name">{PortfolioDetails.common.name}</h3>
+          <p className="text">{PortfolioDetails.common.bio}</p>
           <div className="iknow_tm_button">
-            <a href={homeData.resumeURL} download={homeData.resumeDownloadName}>
+            <a
+              href={PortfolioDetails.resume.resumeURL}
+              download={PortfolioDetails.resume.resumeDownloadName}
+            >
               Download Resume
             </a>
           </div>

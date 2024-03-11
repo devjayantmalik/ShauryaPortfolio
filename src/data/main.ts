@@ -1,31 +1,143 @@
-export const homeData = {
-  name: "Shaurya Bhatnagar",
-  description:
-    "Demystifying the field of CS and related branches(ML,AI,DS, and more...) to understand How machines work?",
-  resumeURL: "/resume.pdf",
-  resumeDownloadName: "Shaurya-Bhatnagar-Resume.pdf",
-} as const;
+import one from "~/pics/news/1.jpg";
+import two from "~/pics/news/2.jpg";
+import three from "~/pics/news/3.jpg";
 
-export const aboutData = {
-  name: "Jessica Parker",
-  img: "/img/about/1.jpg",
-  birthday: "April 22, 1990",
-  nationality: "Bangladeshi",
-  email: "hello@anderson.com",
-  phone: "+123 456 7890",
-  bio: "Hi! My name is Jessica Parker. I am UI/UX designer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional graphic designer, I have acquired the skills and knowledge necessary to make your project a success.",
-  address: "20, Bardeshi, Dhaka",
-  title: "World leading UI/UX designer",
-  subTitle: "A passionate UI/UX Designer and Web Developer based In NYC, USA",
+export const PortfolioDetails = {
+  // Route: ["/", "/about"]
+  common: {
+    name: "Shaurya Bhatnagar",
+    bio: "Demystifying the field of CS and related branches(ML,AI,DS, and more...) to understand How machines work?",
+    birthday: "May 22, 2001",
+    nationality: "Indian",
+    email: "shauryabhatnagar66@gmail.com",
+    phone: "+91 702 702 4142",
+    address: "Rohtak, Haryana, India - 124001",
+  },
+
+  // Route ["/", "/about"]
+  resume: {
+    resumeURL: "/resume.pdf",
+    resumeDownloadName: "Shaurya-Bhatnagar-Resume.pdf",
+  },
+
+  // Route ["/about"]
+  about: {
+    title: "World leading UI/UX designer",
+    subTitle: "A passionate UI/UX Designer and Web Developer based In NYC, USA",
+  },
+
+  // Route: ["/education"]
+  educations: [
+    {
+      id: 1,
+      subject: "B.Tech CSE",
+      university: "Vaish college of Engineering - Rohtak, HR, India",
+      desc: "University gold medalist of MDU",
+      date: "2018 - 2022",
+    },
+    {
+      id: 2,
+      subject: "12th",
+      university: "Govt. Sr. Sec School - Rohtak, HR, India",
+      desc: "Highest marks in school",
+      date: "2017 - 2018",
+    },
+    {
+      id: 3,
+      subject: "10th",
+      university: "Vaish Sr. Sec. School - Rohtak, HR, India",
+      desc: "Highest marks in school",
+      date: "2015 - 2016",
+    },
+  ],
+  achievements: [
+    {
+      id: 1,
+      title: "Design & Analysis of Algorithms",
+      company: "NPTEL",
+      desc: "This course was taught by prof. Mahadevan mukund(Chennai Mathematical Institute). I have solved a lot of problems as assignment.",
+      date: "2023",
+    },
+    {
+      id: 2,
+      title: "Data Science, ML & AI using Python",
+      company: "Diginique Techlabs",
+      desc: "Completed 2 months of internship and done hands on projects.",
+      date: "2023",
+    },
+    {
+      id: 3,
+      title: "Probability for computer science",
+      company: "NPTEL (IIT Kanpur)",
+      desc: "This course is for foundation of probability for machine learning and ai related areas.",
+      date: "2023",
+    },
+  ],
+
+  // Route: ["/skills"]
+  skillsets: [
+    {
+      title: "Personal Skills",
+      skills: [
+        { id: 1, title: "Time Management", value: "90" },
+        { id: 2, title: "Effeciency", value: "70" },
+        { id: 3, title: "Intigrity", value: "80" },
+      ],
+    },
+  ],
+  softwareSkills: [
+    { id: 1, title: "Ms Office", value: "80" },
+    { id: 2, title: "Photoshop", value: "75" },
+    { id: 3, title: "Illustrator", value: "90" },
+    { id: 4, title: "Figma", value: "65" },
+  ],
+
+  // Route: ["/projects"]
+  projects: [
+    {
+      id: 1,
+      category: "Web Design",
+      title: "How to create a website using WordPress",
+      img: one,
+      summary:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, deleniti?",
+    },
+    {
+      id: 2,
+      category: "Branding",
+      title: "Angular team streamlines requests",
+      img: two,
+      summary:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, deleniti?",
+    },
+    {
+      id: 3,
+      category: "UI Design",
+      title: "How to handle errors in React Javascript",
+      img: three,
+      summary:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, deleniti?",
+    },
+  ],
 } as const;
 
 export const navLinks = [
   { id: 0, href: "/", title: "Home", icon: "squares" },
   { id: 1, href: "/about", title: "About Me", icon: "archive" },
-  { id: 2, href: "/resume", title: "Resume", icon: "contacs" },
-  { id: 4, href: "/service", title: "Service", icon: "gear" },
-  { id: 6, href: "/news", title: "Blog", icon: "writing" },
-  { id: 7, href: "/contact", title: "Contact", icon: "letter" },
+  {
+    id: 2,
+    href: "/education",
+    title: "Education & Achievements",
+    icon: "contacs",
+  },
+  {
+    id: 3,
+    href: "/skills",
+    title: "Skills",
+    icon: "contacs",
+  },
+  { id: 4, href: "/projects", title: "Projects", icon: "writing" },
+  { id: 5, href: "/contact", title: "Contact", icon: "letter" },
 ] as const;
 
 export const icons = {

@@ -1680,17 +1680,17 @@ body.dark .loader_line:after {
   width: 50%;
   padding-left: 30px;
 }
-.iknow_tm_resume .right .skills_list {
+.iknow_tm_resume .right .skills_list,.iknow_tm_resume .left .skills_list {
   width: 100%;
   height: auto;
   clear: both;
   float: left;
   margin-bottom: 67px;
 }
-.iknow_tm_resume .right .skills_list:last-child {
+.iknow_tm_resume .right .skills_list:last-child,.iknow_tm_resume .left .skills_list:last-child {
   margin-bottom: 0px;
 }
-.iknow_tm_resume .right .skills_list .personal {
+.iknow_tm_resume .right .skills_list .personal,.iknow_tm_resume .left .skills_list .personal {
   width: 100%;
   height: auto;
   clear: both;
