@@ -1,7 +1,7 @@
 import Image from "next/image";
 import homeBackground from "~/pics/home/background.jpg";
 import avatar from "~/pics/home/avatar.png";
-import { PortfolioDetails, homeData } from "../data/main";
+import { PortfolioDetails } from "../data/main";
 
 export default function Home() {
   return (
